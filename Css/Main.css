@@ -1,0 +1,84 @@
+body {
+    display: grid;
+    grid-template-columns: auto 800px auto;
+    grid-template-rows: auto 608 px auto;
+    gap: 20px;
+    margin: 0px;
+    background-color: black;
+}
+
+h1 {
+    color: white;
+}
+
+p {
+    margin: 0px;
+}
+
+#title {
+    grid-column-start: 2;
+    grid-row-start: 1;
+    text-align: center;
+}
+
+#gameWindow {
+    position: relative;
+    width: 800px;
+    height: 608px;
+    grid-column-start: 2;
+    grid-row-start: 2;
+
+    background-color: blue;
+}
+
+#iventoryBox {
+
+    display: block;
+    left: 10px;
+    top: 10px;
+    width: 180px;
+    height: 80px;
+    color: white;
+    background-color: black;
+    border: white 1px solid;
+    padding: 10px;
+}
+
+#dialogBar {
+    bottom: 0px;
+}
+
+#SetMainDialog {
+    position: relative;
+    height: 64px;
+    width: 800px;
+}
+
+.foreground {
+    position: absolute;
+    z-index: 1000;
+}
+
+#MaincharacterDialogue {
+    left: 0px;
+    bottom: 0px;
+    background-color: red;
+    width: 100px;
+    height: 100px;
+}
+
+#counterSpeech {
+    right: 0px;
+    bottom: 0px;
+    background-color: red;
+    width: 100px;
+    height: 100px;
+}
+
+#brownBar {
+    position: absolute;
+    height: 32px;
+    width: 800px;
+    background-color: brown;
+    bottom: 0px;
+}

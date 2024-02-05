@@ -1,0 +1,1 @@
+document.getElementById("MainTitle").innerText = "FUCK YOU LITTLE NIGGER";
