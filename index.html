@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Css/Main.css">
     <title>Point & click adventure</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -14,7 +17,7 @@
     </div>
 
     <div id="gameWindow">
-        <img src="assets/Map/tilemap1.jpg" alt="tilemap1">
+
         <!-- dialog bar-->
         <div id="dialogBar" class="foreground">
             <div id="SetMainDialog"></div>
@@ -23,6 +26,8 @@
             <div id="counterSpeech" class="foreground"></div>
             <div id="brownBar"></div>
         </div>
+
+        <!--Inventory-->
         <div id="iventoryBox" class="foreground">
             <p>Inventory</p>
             <ul id="InventoryList">
@@ -30,6 +35,18 @@
             </ul>
         </div>
 
+        <!--foreground-->
+        <div id="door1" class="foreground"></div>
+
+        <!--Main character-->
+        <div id="mainCharacter" class="heroCharacter">
+
+        </div>
+
+        <!--background-->
+        <div id="tilemap" class="background">
+            <img src="assets/Map/tilemap1.jpg" draggable="false" alt="tilemap1">
+        </div>
     </div>
     <script src="main.js"></script>
 </body>
