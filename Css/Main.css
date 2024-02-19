@@ -54,7 +54,7 @@ p {
     background-color: blue;
 }
 
-#iventoryBox {
+#inventoryBox {
 
     display: relative;
     left: 10px;
@@ -83,6 +83,26 @@ p {
     opacity: 1;
     top: 100px;
     left: 650px;
+
+}
+
+#door2 {
+    width: 43px;
+    height: 54px;
+    /* background-color: rgb(212, 46, 185); */
+    opacity: 1;
+    top: 79px;
+    left: 495px;
+
+}
+
+#key1 {
+    width: 32px;
+    height: 32px;
+    background-color: yellow;
+    opacity: 1;
+    top: 116px;
+    left: 666px;
 
 }
 
