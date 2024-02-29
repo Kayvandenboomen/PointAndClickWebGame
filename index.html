@@ -4,53 +4,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Css/Main.css">
-    <title>Point & click adventure</title>
+    <link rel="stylesheet" href="css/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&family=Protest+Riot&display=swap"
+        rel="stylesheet">
+
+    <title>point and click adventure</title>
 </head>
 
 <body>
     <div id="title">
-        <h1 id="MainTitle"> </h1>
+        <h1 id="mainTitle"></h1>
     </div>
 
     <div id="gameWindow">
-
-        <!-- dialog bar-->
+        <!--dialog bar-->
         <div id="dialogBar" class="foreground">
-            <div id="SetMainDialog"></div>
-            <div id="MaincharacterDialogue" class="foreground"></div>
-
-            <div id="counterSpeech" class="foreground"></div>
-            <div id="brownBar"></div>
+            <div id="setMainDialog">
+                <div id="mainCharacterAvatar" class="foreground">
+                    <img src="assets/TalkingCharacters/portairt.png" alt="main character avatar">
+                </div>
+                <div id="mainCharacterSpeech" class="foreground speech-bubble">...</div>
+                <div id="counterSpeech" class="foreground speech-bubble">...</div>
+                <div id="counterAvatar" class="foreground">
+                    <img id="counterAvatarImg" src="assets/Objects/Questboard.png" alt="counter avatar">
+                </div>
+                <div id="brownBar"></div>
+            </div>
         </div>
 
-        <!--Inventory-->
+        <!-- inventory -->
         <div id="inventoryBox" class="foreground">
             <p>Inventory</p>
             <ul id="inventoryList">
 
             </ul>
+
         </div>
 
-        <!--foreground items-->
+        <!--Foreground items-->
         <div id="key1" class="foreground"></div>
         <div id="door1" class="foreground"></div>
         <div id="door2" class="foreground"></div>
 
+        <div id="sign" class="foreground"></div>
+        <div id="Questboard" class="foreground"></div>
+
         <!--Main character-->
         <div id="mainCharacter" class="heroCharacter">
-
+            <img id="mcImage" draggable="false" src="assets/Animations/animated-character-1-idle.gif"
+                alt="main character">
         </div>
 
-        <!--background-->
+        <!--Background-->
         <div id="tilemap" class="background">
-            <img src="assets/Map/tilemap1.jpg" draggable="false" alt="tilemap1">
+            <img src="assets/Map/Official map.png" draggable="false" alt="tilemap level 1">
+            <div id="backgroundimg" class="background">
+                <img src="" alt="">
+            </div>
         </div>
     </div>
-    <script src="main.js"></script>
+
+    <audio id="mcAudio">
+        <source src="assets/audio/Gibberish - Sound Effect_01.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="cAudio">
+        <source src="assets/audio/high pitch voice.mp3" type="audio/mpeg">
+    </audio>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

@@ -4,8 +4,8 @@ body {
     grid-template-rows: auto 608px auto;
     gap: 20px;
     margin: 0px;
-    background-color: black;
-    font-family: Arial, Helvetica, sans-serif;
+
+    font-family: 'Protest Riot', sans-serif;
 }
 
 h1 {
@@ -16,32 +16,12 @@ p {
     margin: 0px;
 }
 
-/* classes */
-.background {
-    position: absolute;
-    z-index: 0;
-}
+/*ID's */
 
-.foreground {
-    position: absolute;
-    z-index: 1000;
-    transition: all 1s ease-in-out;
-}
-
-.heroCharacter {
-    position: absolute;
-    z-index: 100;
-    transition: all 1s ease-in-out;
-}
-
-/* id's */
-#mainCharacter {
-    width: 32px;
-    height: 32px;
-    background-color: red;
-    left: 400px;
-    right: 304px;
-    top: 250px;
+#title {
+    grid-column-start: 2;
+    grid-row-start: 1;
+    text-align: center;
 }
 
 #gameWindow {
@@ -54,88 +34,151 @@ p {
     background-color: blue;
 }
 
-#inventoryBox {
-
-    display: relative;
-    left: 10px;
-    top: 10px;
-    width: 180px;
-    height: 80px;
-    color: white;
-    background-color: black;
-    border: white 1px solid;
-    padding: 10px;
+/*Main charcater*/
+#mainCharacter {
+    width: 32px;
+    height: 32px;
+    left: 400px;
+    top: 304px;
 }
 
-#title {
-    grid-column-start: 2;
-    grid-row-start: 1;
-    text-align: center;
-    font-size: 20px;
-    font-family: 'Protest Revolution', sans-serif;
-}
-
-/* foreground item */
+/*Foreground Items*/
 #door1 {
     width: 64px;
     height: 64px;
-    background-color: rgb(212, 46, 185);
     opacity: 1;
-    top: 100px;
-    left: 650px;
-
+    top: 66px;
+    left: 480px;
 }
 
 #door2 {
-    width: 43px;
+    width: 44px;
     height: 54px;
-    /* background-color: rgb(212, 46, 185); */
-    opacity: 1;
-    top: 79px;
-    left: 495px;
-
+    /* background-color: #fb00ff; */
+    top: 296px;
+    left: 169px;
 }
 
 #key1 {
     width: 32px;
     height: 32px;
-    background-color: yellow;
+    background-color: #fffb00;
     opacity: 1;
-    top: 116px;
-    left: 666px;
+    top: 166px;
+    left: 416px;
+}
+
+#sign {
+    width: 64px;
+    height: 32px;
+    background-color: #442c1c;
+    top: 450px;
+    left: 10px;
+}
+
+#Questboard {
+    width: 300px;
+    height: 200px;
+    top: 420px;
+    left: 371px;
 
 }
 
+/*Inventory box*/
+#inventoryBox {
+    position: relative;
+    display: block;
+    left: 10px;
+    top: 10px;
+    width: 180px;
+    height: 80px;
+    color: white;
+    background-color: #602d00;
+    border: white 1px solid;
+    padding: 10px;
+}
+
+/*Dialog part*/
 #dialogBar {
     bottom: 0px;
 }
 
-#SetMainDialog {
+#setMainDialog {
     position: relative;
     height: 64px;
     width: 800px;
-}
-
-#MaincharacterDialogue {
-    left: 0px;
-    bottom: 0px;
-    background-color: red;
-    width: 100px;
-    height: 100px;
-}
-
-#counterSpeech {
-    right: 0px;
-    bottom: 0px;
-    background-color: red;
-    width: 100px;
-    height: 100px;
 }
 
 #brownBar {
     position: absolute;
     height: 32px;
     width: 800px;
-    background-color: brown;
+    background-color: #442c1c;
     bottom: 0px;
+}
+
+#mainCharacterAvatar {
+    left: 0px;
+    bottom: 0px;
+    width: 72px;
+    height: 68px;
+}
+
+#mainCharacterSpeech {
+    left: 72px;
+    top: 0px;
+}
+
+#counterAvatar {
+    right: 0px;
+    bottom: 0px;
+    width: 72px;
+    height: 68px;
+}
+
+#counterAvatarImg {
+    opacity: 0;
+}
+
+#counterSpeech {
+    right: 72px;
+    top: 0px;
+}
+
+#tilemap {
+    width: 800px;
+    height: 608px;
+    top: 0px;
+    left: 0px;
+}
+
+
+/*Classes*/
+.foreground {
+    position: absolute;
+    z-index: 1000;
+    transition: all 1s ease-in-out;
+}
+
+.heroCharacter {
+    position: absolute;
+    z-index: 100;
+    transition: all 1s ease-in-out;
+}
+
+/*Background */
+.background {
+    position: absolute;
+    z-index: 0;
+}
+
+.speech-bubble {
+    background-color: #FFFFFF;
+    border-radius: 60px;
+    color: #000000;
+    padding: 5px 5px 5px 20px;
+    font-size: 12px;
+    width: 300px;
+    opacity: 0;
+    transition: all 1s ease-in-out;
 }
