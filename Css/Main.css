@@ -4,7 +4,7 @@ body {
     grid-template-rows: auto 608px auto;
     gap: 20px;
     margin: 0px;
-
+    background-color: #000000;
     font-family: 'Protest Riot', sans-serif;
 }
 
@@ -31,54 +31,51 @@ p {
     grid-column-start: 2;
     grid-row-start: 2;
 
-    background-color: blue;
+    background-color: black;
 }
 
 /*Main charcater*/
 #mainCharacter {
     width: 32px;
     height: 32px;
-    left: 400px;
-    top: 304px;
+    left: 7px;
+    top: 238px;
 }
 
 /*Foreground Items*/
 #door1 {
-    width: 64px;
-    height: 64px;
+    width: 42px;
+    height: 45px;
     opacity: 1;
-    top: 66px;
-    left: 480px;
+    top: 217px;
+    left: 449px;
 }
 
 #door2 {
-    width: 44px;
-    height: 54px;
-    /* background-color: #fb00ff; */
-    top: 296px;
-    left: 169px;
+    width: 31px;
+    height: 31px;
+    top: 180px;
+    left: 185px;
 }
 
 #key1 {
     width: 32px;
     height: 32px;
-    background-color: #fffb00;
     opacity: 1;
     top: 166px;
     left: 416px;
 }
 
 #sign {
-    width: 64px;
-    height: 32px;
-    background-color: #442c1c;
-    top: 450px;
-    left: 10px;
+    width: 33px;
+    height: 33px;
+    top: 190px;
+    left: 15px;
 }
 
 #Questboard {
-    width: 300px;
-    height: 200px;
+    width: 44px;
+    height: 45px;
     top: 420px;
     left: 371px;
 

@@ -54,6 +54,7 @@ gameWindow.onclick = function (e) {
                 console.log('Found key!');
                 document.getElementById("key1").remove();
                 changeInventory('key', 'add');
+                showMessage(mainCharacterSpeech, mcAudio, "Hey I found a key!")
             }
 
             break;
@@ -64,7 +65,11 @@ gameWindow.onclick = function (e) {
                     //yes -> unlock door?
                     gameState.door2locked = false;
                     changeInventory('key', 'delete');
-                    console.log('Door unlocked!');
+                    showMessage(mainCharacterSpeech, mcAudio, "Oh hey the door unlocked");
+                    setTimeout(function () { mainCharacterAvatar.style.opacity = 1; }, 4 * sec);
+                    setTimeout(showMessage, 4 * sec, mainCharacterSpeech, mcAudio, "There's a map here leading to a treasure!");
+                    changeInventory('map', 'add');
+                    onsole.log('Door unlocked!');
 
                 } else {
                     //no -> alert 'door locked'
@@ -77,7 +82,8 @@ gameWindow.onclick = function (e) {
             break;
 
         case "sign":
-
+            setTimeout(function () { counterAvatarImg.style.opacity = 1; }, 0 * sec);
+            showMessage(counterSpeech, cAudio, "Welcome to Ulvengard, Population 45");
             sign.style.opacity = 0.5;
 
             break;
@@ -90,7 +96,7 @@ gameWindow.onclick = function (e) {
             setTimeout(showMessage, 8 * sec, mainCharacterSpeech, mcAudio, "Ooooh interesting");
             setTimeout(function () { counterAvatarImg.style.opacity = 1; }, 12 * sec);
             setTimeout(showMessage, 12 * sec, counterSpeech, cAudio, "He was last seen in the north part of Ulvengard");
-            setTimeout(function () { counterAvatarImg.style.opacity = 1; }, 16 * sec);
+            setTimeout(function () { counterAvatarImg.style.opacity = 0; }, 16 * sec);
             break;
 
         default:
