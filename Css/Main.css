@@ -81,6 +81,34 @@ p {
 
 }
 
+#treasure {
+    width: 32px;
+    height: 32px;
+    top: 99px;
+    left: 536px;
+}
+
+#npc {
+    width: 32px;
+    height: 32px;
+    top: 436px;
+    left: 276px;
+}
+
+#campfire {
+    width: 32px;
+    height: 32px;
+    top: 95px;
+    left: 673px;
+}
+
+#missingman {
+    width: 32px;
+    height: 32px;
+    top: 4px;
+    left: 600px;
+}
+
 /*Inventory box*/
 #inventoryBox {
     position: relative;
@@ -90,8 +118,8 @@ p {
     width: 180px;
     height: 80px;
     color: white;
-    background-color: #602d00;
-    border: white 1px solid;
+    background-color: #FFD700;
+    border: #000000 1px solid;
     padding: 10px;
 }
 
@@ -134,6 +162,17 @@ p {
 }
 
 #counterAvatarImg {
+    opacity: 0;
+}
+
+#missingmanAvatar {
+    right: 0px;
+    bottom: 0px;
+    width: 72px;
+    height: 68px;
+}
+
+#missingmanAvatarImg {
     opacity: 0;
 }
 

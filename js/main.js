@@ -11,6 +11,9 @@ const gameWindow = document.getElementById("gameWindow");
 //Game state
 let gameState = {
     "door2locked": true,
+    "treasurefound": false,
+    "questaccepted": false,
+    "footstepsfound": false,
     "inventory": [
     ]
 }
@@ -25,6 +28,7 @@ const offsetCharacter = 16;
 const mainCharacterSpeech = document.getElementById("mainCharacterSpeech");
 const counterSpeech = document.getElementById("counterSpeech");
 const counterAvatarImg = document.getElementById("counterAvatarImg");
+const missingmanImg = document.getElementById("missingmanAvatarImg");
 const mcAudio = document.getElementById("mcAudio");
 const cAudio = document.getElementById("cAudio");
 //Inventory
@@ -34,6 +38,7 @@ const inventoryList = document.getElementById("inventoryList"); //ul
 //Foreground Items
 const door1 = document.getElementById("door1");
 const sign = document.getElementById("sign");
+const treasure = document.getElementById("treasure");
 
 
 gameWindow.onclick = function (e) {
@@ -67,7 +72,7 @@ gameWindow.onclick = function (e) {
                     changeInventory('key', 'delete');
                     showMessage(mainCharacterSpeech, mcAudio, "Oh hey the door unlocked");
                     setTimeout(function () { mainCharacterAvatar.style.opacity = 1; }, 4 * sec);
-                    setTimeout(showMessage, 4 * sec, mainCharacterSpeech, mcAudio, "There's a map here leading to a treasure!");
+                    showMessage(mainCharacterSpeech, mcAudio, "There's a map here leading to a treasure in the northeast of Ulvengard!");
                     changeInventory('map', 'add');
                     onsole.log('Door unlocked!');
 
@@ -97,7 +102,48 @@ gameWindow.onclick = function (e) {
             setTimeout(function () { counterAvatarImg.style.opacity = 1; }, 12 * sec);
             setTimeout(showMessage, 12 * sec, counterSpeech, cAudio, "He was last seen in the north part of Ulvengard");
             setTimeout(function () { counterAvatarImg.style.opacity = 0; }, 16 * sec);
+            gameState.questaccepted = true
             break;
+
+        case "treasure":
+            if (document.getElementById("inv-map") !== null) {
+                showMessage(mainCharacterSpeech, mcAudio, "Hey it's the treasure!");
+                setTimeout(function () { mainCharacterSpeech.style.opacity = 1; }, 4 * sec);
+                showMessage(mainCharacterSpeech, mcAudio, "There's another key here along with some gold, nice!")
+                gameState.treasurefound = true
+                changeInventory('map', 'delete');
+                changeInventory('money', 'add');
+                changeInventory('key', 'add');
+                setTimeout(function () { mainCharacterSpeech.style.opacity = 1; }, 8 * sec);
+            } else if (gameState.treasurefound == false) {
+                showMessage(mainCharacterSpeech, mcAudio, "Eat your fruits kids!");
+            }
+            else {
+                showMessage(mainCharacterSpeech, mcAudio, "I've already been here...")
+                setTimeout(function () { mainCharacterSpeech.style.opacity = 1; }, 4 * sec);
+            }
+
+        case "campfire":
+            if (gameState.questaccepted == true) {
+                showMessage(mainCharacterSpeech, mcAudio, "Hmmm there's some footsteps leading north here");
+                gameState.footstepsfound = true
+            } else {
+                showMessage(mainCharacterSpeech, mcAudio, "There's an unlit campfire here. Strange...");
+            }
+            break
+
+        case "missingman":
+
+            if (gameState.questaccepted == true && gameState.footstepsfound == true) {
+                setTimeout(function () { missingmanImg.style.opacity = 1; });
+                showMessage(counterSpeech, cAudio, "Oh hey you found me!");
+                setTimeout(function () { mainCharacterSpeech.style.opacity = 1; }, 4 * sec);
+                setTimeout(showMessage, 4 * sec, mainCharacterSpeech, mcAudio, "What the hell are you doing in a bush?");
+                setTimeout(function () { mainCharacterSpeech.style.opacity = 1; }, 8 * sec);
+                setTimeout(showMessage, 8 * sec, counterSpeech, cAudio, "shhh that's a secret...");
+                setTimeout(function () { missingmanImg.style.opacity = 0; }, 13 * sec);
+            }
+            break
 
         default:
             //explode
