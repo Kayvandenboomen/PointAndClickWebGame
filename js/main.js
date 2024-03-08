@@ -117,6 +117,15 @@ gameWindow.onclick = function (e) {
                 setTimeout(function () { mainCharacterSpeech.style.opacity = 1; }, 8 * sec);
             } else if (gameState.treasurefound == false) {
                 showMessage(mainCharacterSpeech, mcAudio, "Eat your fruits kids!");
+            } else if (gameState.questaccepted == true && document.getElementById("inv-map") !== null) {
+                showMessage(mainCharacterSpeech, mcAudio, "Hey it's the treasure!");
+                setTimeout(function () { mainCharacterSpeech.style.opacity = 1; }, 4 * sec);
+                showMessage(mainCharacterSpeech, mcAudio, "There's another key here along with some gold, nice!")
+                gameState.treasurefound = true
+                changeInventory('map', 'delete');
+                changeInventory('money', 'add');
+                changeInventory('key', 'add');
+                setTimeout(function () { mainCharacterSpeech.style.opacity = 1; }, 8 * sec);
             }
             else {
                 showMessage(mainCharacterSpeech, mcAudio, "I've already been here...")
